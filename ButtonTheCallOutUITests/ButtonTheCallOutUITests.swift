@@ -1,11 +1,3 @@
-//
-//  ButtonTheCallOutUITests.swift
-//  ButtonTheCallOutUITests
-//
-//  Created by ききょ on 2019/03/29.
-//  Copyright © 2019 kikyo. All rights reserved.
-//
-
 import XCTest
 
 class ButtonTheCallOutUITests: XCTestCase {

@@ -1,10 +1,3 @@
-//
-//  ButtonTheCallOutTests.swift
-//  ButtonTheCallOutTests
-//
-//  Created by ききょ on 2019/03/29.
-//  Copyright © 2019 kikyo. All rights reserved.
-//
 
 import XCTest
 @testable import ButtonTheCallOut

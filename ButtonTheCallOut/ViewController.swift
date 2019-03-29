@@ -1,20 +1,45 @@
-//
-//  ViewController.swift
-//  ButtonTheCallOut
-//
-//  Created by ききょ on 2019/03/29.
-//  Copyright © 2019 kikyo. All rights reserved.
-//
-
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController,MKMapViewDelegate {
+    
+    @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        mapView.delegate = self
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(35.6813818,139.7638951)
+        annotation.title = "東京駅"
+        
+        self.mapView.addAnnotation(annotation)
     }
-
-
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        
+        for view in views {
+            view.rightCalloutAccessoryView = UIButton(type: UIButton.ButtonType.detailDisclosure)
+        }
+    }
+    
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let annotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
+        annotation.canShowCallout = true
+        return annotation
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("押したな?")
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
 }
 
